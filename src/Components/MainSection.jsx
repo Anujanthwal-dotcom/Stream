@@ -16,12 +16,14 @@ import Home from "./Sub-Components/Home";
 import VideoUpload from "./Sub-Components/VideoUpload";
 import SavedVideos from "./Sub-Components/SavedVideos";
 import AboutProject from "./Sub-Components/AboutProject";
+import UploadedVideos from "./Sub-Components/UploadedVideos";
 function MainSection({mainSectionState,isAuth, user}) {
     
     if(mainSectionState === 'home') return <Home isAuth={isAuth} user = {user}/>;
     if(mainSectionState === 'upload') return <VideoUpload isAuth={isAuth} user={user}/>;
     if(mainSectionState === 'savedVideos') return <SavedVideos isAuth={isAuth} user={user}/>;
     if(mainSectionState === 'about') return <AboutProject />;
+    if(mainSectionState==='uploadedVideos') return <UploadedVideos user={user}/>;
 };
 
 export default MainSection;

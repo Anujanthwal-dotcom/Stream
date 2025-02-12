@@ -16,6 +16,7 @@ function SideBar({ state, mainSectionStateSetter }) {
                             >Upload</Button>
                         )
                     }
+                    
 
                     <Link to='/'>
                         <Sidebar.Item className="cursor-pointer" icon={FaHome} onClick={() => { mainSectionStateSetter('home') }}>
@@ -28,6 +29,11 @@ function SideBar({ state, mainSectionStateSetter }) {
                         <Sidebar.Item className="cursor-pointer" icon={FaSave} onClick={() => { mainSectionStateSetter('savedVideos') }}>
                             Saved Videos
                         </Sidebar.Item>
+                        {state &&
+                            (<Sidebar.Item className="cursor-pointer" icon={FaSave} onClick={() => { console.log('uploaded');mainSectionStateSetter('uploadedVideos') }}>
+                                Uploaded Videos
+                            </Sidebar.Item>)
+                        }
                         <Sidebar.Item className="cursor-pointer" icon={FaCog} onClick={() => { mainSectionStateSetter('about') }}>
                             About Project
                         </Sidebar.Item>
